@@ -1,0 +1,25 @@
+{
+  "profiles": {
+    "WSL": {
+      "commandName": "WSL2",
+      "environmentVariables": {},
+      "distributionName": ""
+    },
+    "init-playlist": {
+      "commandName": "Project",
+      "commandLineArgs": "init-playlist"
+    },
+    "start playlist": {
+      "commandName": "Project",
+      "commandLineArgs": "start"
+    },
+    "shuffle playlist": {
+      "commandName": "Project",
+      "commandLineArgs": "shuffle"
+    },
+    "validate": {
+      "commandName": "Project",
+      "commandLineArgs": "validate"
+    }
+  }
+}

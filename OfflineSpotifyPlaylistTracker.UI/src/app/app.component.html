@@ -1,0 +1,29 @@
+<div id="root" class="h-screen">
+  <div class="text-center text-2xl py-4">
+    <h1>Hottest Burn100 2021</h1>
+  </div>
+
+  <section *ngIf="tracks; else noTracks">
+    <div *ngFor="let track of tracks; let i = index" class="flex flex-row items-center py-8">
+        
+        <div class="w-[35%] mr-4 ml-2">
+          <img [id]="i" [src]="track.albumArt" (load)="onImgLoad(i)" class="w-full">
+        </div>
+        <div class="z-10 mr-4 w-[60%]">
+          <div>
+            <p class="text-xl mb-4 italic font-bold">#{{track.position}}</p>
+          </div>
+          <p class="font-bold">{{track.name}}</p>
+          <p>{{track.artist}}</p>
+          <!-- <p>Added by: {{track.addedByName}}</p> -->
+        </div>
+        <img src="../assets/faces/{{track.addedByImage}}.png" class="w-40 opacity-50 absolute right-0"/>
+        <img *ngIf="track.position === 1" src="../assets/faces/crown.png" class="w-40 opacity-50 absolute right-0"/>
+
+    </div>
+  </section>
+
+  <ng-template #noTracks>
+    The playlist hasn't started yet... or somethings wrong
+  </ng-template>
+</div>

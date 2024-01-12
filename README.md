@@ -1,1 +1,1 @@
-# OnlineSpotifyPlaylistTracker
+OfflineSpotifyPlaylistTracker
