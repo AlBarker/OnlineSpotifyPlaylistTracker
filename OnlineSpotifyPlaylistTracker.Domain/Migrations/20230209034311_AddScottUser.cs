@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace OfflineSpotifyPlaylistTracker.Domain.Migrations
+namespace OnlineSpotifyPlaylistTracker.Domain.Migrations
 {
     public partial class AddScottUser : Migration
     {

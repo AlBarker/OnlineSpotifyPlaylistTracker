@@ -1,9 +1,9 @@
-using OfflineSpotifyPlaylistTracker.Domain.Models;
+using OnlineSpotifyPlaylistTracker.Domain.Models;
 using SpotifyAPI.Web;
 using System.Linq;
 using System.Web;
 
-namespace OfflineSpotifyPlaylistTracker
+namespace OnlineSpotifyPlaylistTracker
 {
     public  class SpotifyService
     {

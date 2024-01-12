@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using OfflineSpotifyPlaylistTracker;
+using OnlineSpotifyPlaylistTracker;
 
-namespace OfflineSpotifyPlaylistTracker.API.Controllers
+namespace OnlineSpotifyPlaylistTracker.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using OfflineSpotifyPlaylistTracker.Domain.Models;
+using OnlineSpotifyPlaylistTracker.Domain.Models;
 
-namespace OfflineSpotifyPlaylistTracker.Domain
+namespace OnlineSpotifyPlaylistTracker.Domain
 {
     public class SpotifyPlaylistTrackerContext : DbContext
     {

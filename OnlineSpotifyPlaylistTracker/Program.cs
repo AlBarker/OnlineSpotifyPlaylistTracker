@@ -1,5 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using OfflineSpotifyPlaylistTracker;
+using OnlineSpotifyPlaylistTracker;
 
 var repositorySerivce = new RepositoryService();
 var playlistManager = new PlaylistManager(repositorySerivce);

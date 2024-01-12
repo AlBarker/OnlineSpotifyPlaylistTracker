@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OfflineSpotifyPlaylistTracker.Domain.Models
+namespace OnlineSpotifyPlaylistTracker.Domain.Models
 {
     public class TrackPosition
     {

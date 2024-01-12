@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OfflineSpotifyPlaylistTracker.Extensions
+namespace OnlineSpotifyPlaylistTracker.Extensions
 {
     public static class ListExtensions
     {

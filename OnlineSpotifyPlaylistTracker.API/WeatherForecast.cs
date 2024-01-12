@@ -1,4 +1,4 @@
-namespace OfflineSpotifyPlaylistTracker.API
+namespace OnlineSpotifyPlaylistTracker.API
 {
     public class WeatherForecast
     {

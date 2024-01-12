@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OfflineSpotifyPlaylistTracker\OfflineSpotifyPlaylistTracker.csproj" />
+    <ProjectReference Include="..\OnlineSpotifyPlaylistTracker\OnlineSpotifyPlaylistTracker.csproj" />
   </ItemGroup>
 
 </Project>

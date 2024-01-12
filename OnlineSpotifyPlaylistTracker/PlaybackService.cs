@@ -1,7 +1,7 @@
-﻿using OfflineSpotifyPlaylistTracker.Domain.Models;
+﻿using OnlineSpotifyPlaylistTracker.Domain.Models;
 using Vlc.DotNet.Core;
 
-namespace OfflineSpotifyPlaylistTracker
+namespace OnlineSpotifyPlaylistTracker
 {
     public interface IPlaybackService
     {

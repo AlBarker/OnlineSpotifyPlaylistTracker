@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using OfflineSpotifyPlaylistTracker.Domain;
+using OnlineSpotifyPlaylistTracker.Domain;
 
 #nullable disable
 
-namespace OfflineSpotifyPlaylistTracker.Domain.Migrations
+namespace OnlineSpotifyPlaylistTracker.Domain.Migrations
 {
     [DbContext(typeof(SpotifyPlaylistTrackerContext))]
     [Migration("20230209034311_AddScottUser")]
@@ -20,7 +20,7 @@ namespace OfflineSpotifyPlaylistTracker.Domain.Migrations
                 .HasAnnotation("ProductVersion", "6.0.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("OfflineSpotifyPlaylistTracker.Domain.Models.Track", b =>
+            modelBuilder.Entity("OnlineSpotifyPlaylistTracker.Domain.Models.Track", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -53,7 +53,7 @@ namespace OfflineSpotifyPlaylistTracker.Domain.Migrations
                     b.ToTable("Tracks");
                 });
 
-            modelBuilder.Entity("OfflineSpotifyPlaylistTracker.Domain.Models.TrackPosition", b =>
+            modelBuilder.Entity("OnlineSpotifyPlaylistTracker.Domain.Models.TrackPosition", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -76,7 +76,7 @@ namespace OfflineSpotifyPlaylistTracker.Domain.Migrations
                     b.ToTable("TrackPositions");
                 });
 
-            modelBuilder.Entity("OfflineSpotifyPlaylistTracker.Domain.Models.User", b =>
+            modelBuilder.Entity("OnlineSpotifyPlaylistTracker.Domain.Models.User", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("varchar(255)");
@@ -162,9 +162,9 @@ namespace OfflineSpotifyPlaylistTracker.Domain.Migrations
                         });
                 });
 
-            modelBuilder.Entity("OfflineSpotifyPlaylistTracker.Domain.Models.Track", b =>
+            modelBuilder.Entity("OnlineSpotifyPlaylistTracker.Domain.Models.Track", b =>
                 {
-                    b.HasOne("OfflineSpotifyPlaylistTracker.Domain.Models.User", "User")
+                    b.HasOne("OnlineSpotifyPlaylistTracker.Domain.Models.User", "User")
                         .WithMany("Tracks")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -173,24 +173,24 @@ namespace OfflineSpotifyPlaylistTracker.Domain.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("OfflineSpotifyPlaylistTracker.Domain.Models.TrackPosition", b =>
+            modelBuilder.Entity("OnlineSpotifyPlaylistTracker.Domain.Models.TrackPosition", b =>
                 {
-                    b.HasOne("OfflineSpotifyPlaylistTracker.Domain.Models.Track", "Track")
+                    b.HasOne("OnlineSpotifyPlaylistTracker.Domain.Models.Track", "Track")
                         .WithOne("TrackPosition")
-                        .HasForeignKey("OfflineSpotifyPlaylistTracker.Domain.Models.TrackPosition", "TrackId")
+                        .HasForeignKey("OnlineSpotifyPlaylistTracker.Domain.Models.TrackPosition", "TrackId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Track");
                 });
 
-            modelBuilder.Entity("OfflineSpotifyPlaylistTracker.Domain.Models.Track", b =>
+            modelBuilder.Entity("OnlineSpotifyPlaylistTracker.Domain.Models.Track", b =>
                 {
                     b.Navigation("TrackPosition")
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("OfflineSpotifyPlaylistTracker.Domain.Models.User", b =>
+            modelBuilder.Entity("OnlineSpotifyPlaylistTracker.Domain.Models.User", b =>
                 {
                     b.Navigation("Tracks");
                 });

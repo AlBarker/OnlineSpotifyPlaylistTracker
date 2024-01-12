@@ -1,7 +1,7 @@
-﻿using OfflineSpotifyPlaylistTracker.Domain.Models;
-using OfflineSpotifyPlaylistTracker.Extensions;
+﻿using OnlineSpotifyPlaylistTracker.Domain.Models;
+using OnlineSpotifyPlaylistTracker.Extensions;
 
-namespace OfflineSpotifyPlaylistTracker
+namespace OnlineSpotifyPlaylistTracker
 {
     public class PlaylistManager
     {
