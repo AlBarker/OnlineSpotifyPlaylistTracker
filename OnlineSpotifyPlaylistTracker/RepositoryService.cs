@@ -55,6 +55,8 @@ namespace OnlineSpotifyPlaylistTracker
                 AlbumArt = x.AlbumArt,
                 FileName = x.FileName,
                 UserId = users.First(u => u.Id == x.UserId)?.Id,
+                Uri = x.Uri,
+                DurationMs = x.DurationMs,
             });
             await context.Tracks.AddRangeAsync(tracksToAdd);
             await context.SaveChangesAsync();

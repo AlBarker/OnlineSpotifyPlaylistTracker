@@ -20,6 +20,14 @@
     "validate": {
       "commandName": "Project",
       "commandLineArgs": "validate"
+    },
+    "play-live": {
+      "commandName": "Project",
+      "commandLineArgs": "play-live"
+    },
+    "auth": {
+      "commandName": "Project",
+      "commandLineArgs": "auth"
     }
   }
 }

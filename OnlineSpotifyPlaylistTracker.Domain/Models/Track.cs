@@ -8,6 +8,8 @@
         public string FileName { get; set; }
         public string AlbumArt { get; set; }
         public string UserId { get; set; }
+        public string Uri { get; set; }
+        public int DurationMs { get; set; }
         public User User { get; set; }
 
         public virtual TrackPosition TrackPosition { get; set; }

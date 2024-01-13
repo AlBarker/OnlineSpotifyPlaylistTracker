@@ -6,7 +6,8 @@ namespace OnlineSpotifyPlaylistTracker
     public class PlaylistManager
     {
         private IPlaybackService playbackService;
-        private RepositoryService repositoryService;
+        private readonly RepositoryService repositoryService;
+        private readonly SpotifyService spotifyService;
 
         const int CountSongs = 100;
 
@@ -14,6 +15,7 @@ namespace OnlineSpotifyPlaylistTracker
         {
             playbackService = new PlaybackService();
             repositoryService = repositorySerivce;
+            spotifyService = new SpotifyService(repositoryService);
         }
 
         public async Task StartPlaylist()
@@ -30,6 +32,24 @@ namespace OnlineSpotifyPlaylistTracker
                 }
                 Console.WriteLine($"Playing #{i}, {track.Name} by {track.Artist}. Added by {track.User.DisplayName}");
                 playbackService.PlaySong(track);
+            }
+        }
+
+        public async Task StartPlaylistLive()
+        {
+            var currentSong = await repositoryService.GetCurrentPositionToPlay();
+
+            for (int i = currentSong; i > 0; i--)
+            {
+                var track = await repositoryService.GetTrackFromTrackPosition(i);
+                if (i % 5 == 0 || i < 5)
+                {
+                    playbackService.PlayFillerSound(i);
+
+                }
+                Console.WriteLine($"Playing #{i}, {track.Name} by {track.Artist}. Added by {track.User.DisplayName}");
+
+                await spotifyService.PlayTrack(track.Uri, track.DurationMs);
             }
         }
 

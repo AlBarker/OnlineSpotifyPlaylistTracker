@@ -33,7 +33,15 @@ switch (command)
 		await repositorySerivce.ValidateTrackNamesAreCorrect();
 		await repositorySerivce.ValidateFillerSoundbytes();
 		break;
+	case "play-live":
+		await playlistManager.StartPlaylistLive();
+		break;
+	case "auth":
+		await spotifyService.Authenticate();
+		_ = Console.ReadKey();
+		break;
 	default:
 		Console.WriteLine("Invalid command");
 		break;
 }
+
