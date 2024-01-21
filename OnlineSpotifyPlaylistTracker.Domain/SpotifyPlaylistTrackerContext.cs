@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using OnlineSpotifyPlaylistTracker.Domain.Models;
 
 namespace OnlineSpotifyPlaylistTracker.Domain
@@ -93,6 +93,19 @@ namespace OnlineSpotifyPlaylistTracker.Domain
                     DisplayName = "Scott Leah",
                     ImageName = "sl"
                 },
+                new User
+                {
+                    Id = "113424562",
+                    DisplayName = "Manu Du Fromage",
+                    ImageName = "mf"
+                },
+                 new User
+                {
+                    Id = "12138108557",
+                    DisplayName = "Wildcard",
+                    ImageName = "beer3",
+                },
+
             };
 
             modelBuilder.Entity<User>(entity =>

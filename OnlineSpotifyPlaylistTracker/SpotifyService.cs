@@ -28,7 +28,8 @@ namespace OnlineSpotifyPlaylistTracker
             // 2020: 2CuhODa4xTTlemWopeXG71
             // 2021: 2rdxeAIgVMRLmNHiIAQqmV
             // 2022: 1goTZfOG1oahHtQCX2CzsA
-            var playlistResponse = await client.Playlists.GetItems("1goTZfOG1oahHtQCX2CzsA");
+            // 2023: 4Bd2EKiv9HfAqfHIf5rMCM
+            var playlistResponse = await client.Playlists.GetItems("4Bd2EKiv9HfAqfHIf5rMCM");
 
             var users = await repositoryService.GetUsers();
 
@@ -62,6 +63,7 @@ namespace OnlineSpotifyPlaylistTracker
             // 2020: 2CuhODa4xTTlemWopeXG71
             // 2021: 2rdxeAIgVMRLmNHiIAQqmV
             // 2022: 1goTZfOG1oahHtQCX2CzsA
+            // 2023: 4Bd2EKiv9HfAqfHIf5rMCM
             var playlistResponse = await client.Playlists.GetItems("6SDuwhW8HekJQLZak0Kmmi");
 
             var users = await repositoryService.GetUsers();
@@ -93,23 +95,6 @@ namespace OnlineSpotifyPlaylistTracker
                     }
                 };
             }).ToList();
-
-            //return playlistResponse.Items.Select((v, i) =>
-            //{
-            //    var track = (FullTrack)v.Track;
-            //    var artists = String.Join(", ", track.Artists.Select(x => x.Name));
-            //    var fileName = (String.Join(" ", artists, track.Name));
-            //    var sanitisedFileName = fileName.Replace("/", "").Replace("?", "").Replace("*", "");
-            //    return new SpotifyTrackModel
-            //    {
-            //        Id = i + 1,
-            //        Name = track.Name,
-            //        Artist = artists,
-            //        FileName = sanitisedFileName,
-            //        AlbumArt = track.Album.Images.FirstOrDefault()?.Url,
-            //        UserId = v.AddedBy.Id
-            //    };
-            //});
         }
 
         public async Task PlayTrack(string uri, int durationMs)
