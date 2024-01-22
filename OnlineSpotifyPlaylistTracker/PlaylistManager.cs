@@ -42,7 +42,7 @@ namespace OnlineSpotifyPlaylistTracker
             for (int i = currentSong; i > 0; i--)
             {
                 var track = await repositoryService.GetTrackFromTrackPosition(i);
-                if (i % 5 == 0 || i < 5)
+                if (i % 10 == 0 || i <= 5)
                 {
                     playbackService.PlayFillerSound(i);
 
