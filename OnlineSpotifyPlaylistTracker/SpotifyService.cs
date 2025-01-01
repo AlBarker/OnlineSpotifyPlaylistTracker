@@ -29,7 +29,8 @@ namespace OnlineSpotifyPlaylistTracker
             // 2021: 2rdxeAIgVMRLmNHiIAQqmV
             // 2022: 1goTZfOG1oahHtQCX2CzsA
             // 2023: 4Bd2EKiv9HfAqfHIf5rMCM
-            var playlistResponse = await client.Playlists.GetItems("4Bd2EKiv9HfAqfHIf5rMCM");
+            // 2024: 6Q2lmuK0ByfUmPDYPld2zI
+            var playlistResponse = await client.Playlists.GetItems("6Q2lmuK0ByfUmPDYPld2zI");
 
             var users = await repositoryService.GetUsers();
 
@@ -48,6 +49,7 @@ namespace OnlineSpotifyPlaylistTracker
                     AlbumArt = track.Album.Images.FirstOrDefault()?.Url,
                     UserId = v.AddedBy.Id,
                     Uri = track.Uri,
+                    Popularity = track.Popularity,
                     DurationMs = track.DurationMs,
                 };
             });
@@ -89,6 +91,7 @@ namespace OnlineSpotifyPlaylistTracker
                     AlbumArt = track.Album.Images.FirstOrDefault()?.Url,
                     UserId = v.AddedBy.Id,
                     User = users.FirstOrDefault(x => x.Id == v.AddedBy.Id),
+                    Popularity = track.Popularity,
                     TrackPosition = new TrackPosition
                     {
                         Position = i + 1,
@@ -211,5 +214,6 @@ namespace OnlineSpotifyPlaylistTracker
         public string UserId { get; set; }
         public string Uri { get; set; }
         public int DurationMs { get; set; }
+        public int Popularity { get; set; }
     }
 }

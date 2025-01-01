@@ -99,6 +99,12 @@ namespace OnlineSpotifyPlaylistTracker.Domain
                     DisplayName = "Manu Du Fromage",
                     ImageName = "mf"
                 },
+                new User
+                {
+                    Id = "billysakalis",
+                    DisplayName = "Billy Sakalis",
+                    ImageName = "bs"
+                },
                  new User
                 {
                     Id = "12138108557",

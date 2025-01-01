@@ -46,7 +46,7 @@ namespace OnlineSpotifyPlaylistTracker
         {
             using var context = new SpotifyPlaylistTrackerContext();
             var users = await GetUsers();
-
+            
             var tracksToAdd = tracks.Select(x => new Track
             {
                 Id = x.Id,
@@ -57,6 +57,7 @@ namespace OnlineSpotifyPlaylistTracker
                 UserId = users.First(u => u.Id == x.UserId)?.Id,
                 Uri = x.Uri,
                 DurationMs = x.DurationMs,
+                Popularity = x.Popularity,
             });
             await context.Tracks.AddRangeAsync(tracksToAdd);
             await context.SaveChangesAsync();
@@ -97,7 +98,8 @@ namespace OnlineSpotifyPlaylistTracker
         public async Task DownloadAlbumArt(IEnumerable<SpotifyTrackModel> tracks)
         {
             Console.WriteLine("Starting to download album art. Clearing directory...");
-            System.IO.DirectoryInfo di = new DirectoryInfo("C:\\Repos\\OnlineSpotifyPlaylistTracker\\OnlineSpotifyPlaylistTracker.UI\\src\\assets\\art");
+           
+            System.IO.DirectoryInfo di = Directory.CreateDirectory("assets//art");
 
             foreach (FileInfo file in di.GetFiles())
             {
@@ -110,7 +112,7 @@ namespace OnlineSpotifyPlaylistTracker
                 {
                     using (Stream streamToReadFrom = await client.GetStreamAsync(track.AlbumArt))
                     {
-                        string fileToWriteTo = Path.GetFullPath($"C:\\Repos\\OnlineSpotifyPlaylistTracker\\OnlineSpotifyPlaylistTracker.UI\\src\\assets\\art\\{track.FileName}.png");
+                        string fileToWriteTo = Path.GetFullPath($"assets//art//{track.FileName}.png");
                         //Console.WriteLine($"Downloading album art from {track.AlbumArt} and writing to {track.FileName}");
                         using (Stream streamToWriteTo = File.Open(fileToWriteTo, FileMode.Create))
                         {

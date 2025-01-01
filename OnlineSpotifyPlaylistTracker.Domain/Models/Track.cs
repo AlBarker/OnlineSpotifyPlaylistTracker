@@ -11,6 +11,7 @@
         public string Uri { get; set; }
         public int DurationMs { get; set; }
         public User User { get; set; }
+        public int Popularity { get; set; }
 
         public virtual TrackPosition TrackPosition { get; set; }
     }

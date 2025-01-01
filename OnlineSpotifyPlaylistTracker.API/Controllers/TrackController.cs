@@ -30,7 +30,8 @@ namespace OnlineSpotifyPlaylistTracker.API.Controllers
                 Position = x.TrackPosition.Position,
                 AddedByName = x.User.DisplayName,
                 AddedByImage = x.User.ImageName,
-                AlbumArt = "/assets/art/" + x.FileName + ".png"
+                AlbumArt = "/assets/art/" + x.FileName + ".png",
+                Popularity = x.Popularity
             }).ToList();
 
             return mappedTracks;
@@ -63,7 +64,8 @@ namespace OnlineSpotifyPlaylistTracker.API.Controllers
                     Position = x.TrackPosition.Position,
                     AddedByName = x.User.DisplayName,
                     AddedByImage = x.User.ImageName,
-                    AlbumArt = x.AlbumArt
+                    AlbumArt = x.AlbumArt,
+                    Popularity = x.Popularity
                 }).ToList();
 
             return mappedTracks;
@@ -78,5 +80,6 @@ namespace OnlineSpotifyPlaylistTracker.API.Controllers
         public string AddedByName { get; set; }
         public string AddedByImage { get; set; }
         public string AlbumArt { get; set; }
+        public int Popularity { get; set; }
     }
 }
