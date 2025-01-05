@@ -39,7 +39,7 @@ namespace OnlineSpotifyPlaylistTracker
                 var track = (FullTrack)v.Track;
                 var artists = String.Join(", ", track.Artists.Select(x => x.Name));
                 var fileName = (String.Join(" ", artists, track.Name));
-                var sanitisedFileName = fileName.Replace("/", "").Replace("?", "").Replace("*", "");
+                var sanitisedFileName = fileName.Replace("/", "").Replace("?", "").Replace("*", "").Replace("Ü", "U").Replace("è", "e").Replace("ü", "u");
                 return new SpotifyTrackModel
                 {
                     Id = i + 1,
@@ -82,7 +82,7 @@ namespace OnlineSpotifyPlaylistTracker
                 var track = (FullTrack)v.Track; 
                 var artists = String.Join(", ", track.Artists.Select(x => x.Name));
                 var fileName = (String.Join(" ", artists, track.Name));
-                var sanitisedFileName = fileName.Replace("/", "").Replace("?", "").Replace("*", "");
+                var sanitisedFileName = fileName.Replace("/", "").Replace("?", "").Replace("*", "").Replace("Ü", "U").Replace("è", "e").Replace("ü", "u");
                 return new Track
                 {
                     Name = track.Name,

@@ -21,6 +21,7 @@ namespace OnlineSpotifyPlaylistTracker
 
         public void PlayFillerSound(int trackNumber)
         {
+            Console.WriteLine($"Started playing filler sound {trackNumber}");
             string hornFileName = "/Users/alexbarker/Countdown/filler/horn.m4a";
             PlayAudioFile(hornFileName);
             string audioFileName = $"/Users/alexbarker/Countdown/filler/{trackNumber}.m4a";

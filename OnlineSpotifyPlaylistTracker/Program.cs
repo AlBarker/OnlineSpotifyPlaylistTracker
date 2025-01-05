@@ -30,7 +30,7 @@ switch (command)
         await repositorySerivce.DownloadAlbumArt(tracks);
 		break;
 	case "validate":
-		await repositorySerivce.ValidateTrackNamesAreCorrect();
+		// await repositorySerivce.ValidateTrackNamesAreCorrect();
 		await repositorySerivce.ValidateFillerSoundbytes();
 		break;
 	case "play-live":
